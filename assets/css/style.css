@@ -88,4 +88,10 @@
   padding: 1em;
 }
 
+/**/
+.status{
+  font-size: 1.5em;
+}
+
+/*  */
 @media only screen and (max-width: 720px) {}

@@ -20,20 +20,14 @@ const send2 = document.querySelector('#send2');
 const chats2 = document.querySelector('.chats2');
 const clearChats2 = document.querySelector('#clear2');
 
+const Status = [status1, status2];
 
-
-// functions
-// function names(event) {
-//     // event.preventDefault();
-//     let loginInput = name1.value;
-//     if(loginInput === ''){
-//         alert('hello')
-//     }
-
-//    console.log(loginInput)
-    
-// }
-
+Status.forEach(Status => {
+    if(Status.textContent === 'active'){
+        Status.style.color = 'green';
+    }
+})
+// log in on the left
 login1.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -44,10 +38,15 @@ login1.addEventListener('click', (event) => {
     chatMate2.textContent = name1.value;
 
     status1.textContent = 'active';
+
+    if(status1.textContent === 'active'){
+        status1.style.color = 'green';
+    }
    console.log(name1.value)
    name1.value = '';
 })
 
+// login on the right
 login2.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -57,7 +56,70 @@ login2.addEventListener('click', (event) => {
     chatMate1.textContent = name2.value
     status2.textContent = 'active';
   
+
+    if(status2.textContent === 'active'){
+        status2.style.color = 'green';
+    }
    console.log(name2.value)
    name2.value = '';
 })
 
+// sendbutton on the left
+send1.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if(status1.textContent === 'offline'){
+        alert('please login');
+    }
+
+
+    const sentChat1 = document.createElement('p');
+    sentChat1.classList.add('lines');
+    sentChat1.textContent = chatsInput1.value;
+
+
+    if(chatsInput1.value === ''){
+        alert('please type in a chat')
+    }
+    else{
+        chats2.appendChild(sentChat1);
+    }
+
+    
+    console.log(sentChat1)
+    chatsInput1.value = '';
+})
+
+// sendbutton on the right
+send2.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if(status2.textContent === 'offline'){
+        alert('please login');
+    }
+
+    const sentChat2 = document.createElement('p');
+    sentChat2.classList.add('lines');
+    sentChat2.textContent = chatsInput2.value;
+
+    //
+    if(chatsInput2.value === ''){
+        alert('please type in a chat')
+    }
+    else{
+        chats1.appendChild(sentChat2);
+    }
+
+    console.log(sentChat2)
+    chatsInput2.value = '';
+})
+
+// clear button on the left
+clearChats1.addEventListener('click', () => {
+    chats1.textContent = '';
+})
+
+// clear button on the right
+clearChats2.addEventListener('click', () => {
+    chats2.textContent = '';
+})
