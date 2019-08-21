@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>chat-chat</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
-    
-    <script src="./assets/javascript/index.js"></script>
+    <main>
+        <section container>
+            <section left-container>
+                <section left>
+                    <input type="text" placeholder="name" class="input1" id="name1"/><button class="login1 button1">Login
+                    </button>
+                    <div class="box" id="chatbox1">
+                        <p class="status1">offline</p>
+                        <br />
+                        <p>I am chatting with <b class="chatmate1">OBI</b></p>
+                        <div>
+                            <input type="text" placeholder="chat" class="input1" id="chatsinput1"/><button class="button1" id="send1">
+                                send
+                            </button>
+                        </div>
+                        <div class="chats1">
+                            <p class="lines">hello</p>
+                            <p class="lines">hi</p>
+                            <p class="lines">ok</p>
+                            <p class="lines">bye</p>
+                        </div>
+                        <button class="button1" id="clear1">Clear chats</button>
+                    </div>
+                </section>
+            </section>
+            <section right-container>
+                <section right>
+                        <input type="text" placeholder="name" class="input2" id="name2"/><button class="login2 button2">Login
+                            </button>
+                            <div class="box" id="chatbox2">
+                                <p class="status2">offline</p>
+                                <br />
+                                <p>I am chatting with <b class="chatmate2">MICHEAL</b></p>
+                                <div>
+                                    <input type="text" placeholder="chat" class="input2" id="chatsinput2"/><button class="button2" id="send2">
+                                        send
+                                    </button>
+                                </div>
+                                <div class="chats2">
+                                    <p class="lines">hello</p>
+                                    <p class="lines">hi</p>
+                                    <p class="lines">ok</p>
+                                    <p class="lines">bye</p>
+                                </div>
+                                <button class="button2" id="clear2">Clear chats</button>
+                            </div>
+                        </section>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
