@@ -42,7 +42,7 @@ login1.addEventListener('click', (event) => {
     if(status1.textContent === 'active'){
         status1.style.color = 'green';
     }
-   console.log(name1.value)
+
    name1.value = '';
 })
 
@@ -60,18 +60,13 @@ login2.addEventListener('click', (event) => {
     if(status2.textContent === 'active'){
         status2.style.color = 'green';
     }
-   console.log(name2.value)
+
    name2.value = '';
 })
 
 // sendbutton on the left
 send1.addEventListener('click', (event) => {
     event.preventDefault();
-
-    if(status1.textContent === 'offline'){
-        alert('please login');
-    }
-
 
     const sentChat1 = document.createElement('p');
     sentChat1.classList.add('lines');
@@ -81,22 +76,21 @@ send1.addEventListener('click', (event) => {
     if(chatsInput1.value === ''){
         alert('please type in a chat')
     }
-    else{
+    else if(status1.textContent === 'offline'){
+        alert('please login');
+    }
+    else {
+        
         chats2.appendChild(sentChat1);
     }
 
     
-    console.log(sentChat1)
     chatsInput1.value = '';
 })
 
 // sendbutton on the right
 send2.addEventListener('click', (event) => {
     event.preventDefault();
-
-    if(status2.textContent === 'offline'){
-        alert('please login');
-    }
 
     const sentChat2 = document.createElement('p');
     sentChat2.classList.add('lines');
@@ -106,20 +100,28 @@ send2.addEventListener('click', (event) => {
     if(chatsInput2.value === ''){
         alert('please type in a chat')
     }
+    else if(status2.textContent === 'offline'){
+        alert('please login');
+    }
     else{
         chats1.appendChild(sentChat2);
     }
 
-    console.log(sentChat2)
     chatsInput2.value = '';
 })
 
 // clear button on the left
 clearChats1.addEventListener('click', () => {
+    if(chats1.textContent === ''){
+        alert('there are no chats')
+    }
     chats1.textContent = '';
 })
 
 // clear button on the right
 clearChats2.addEventListener('click', () => {
+    if(chats2.textContent === ''){
+        alert('there are no chats')
+    }
     chats2.textContent = '';
 })
