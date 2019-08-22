@@ -20,13 +20,7 @@ const send2 = document.querySelector('#send2');
 const chats2 = document.querySelector('.chats2');
 const clearChats2 = document.querySelector('#clear2');
 
-const Status = [status1, status2];
 
-Status.forEach(Status => {
-    if(Status.textContent === 'active'){
-        Status.style.color = 'green';
-    }
-})
 // log in on the left
 login1.addEventListener('click', (event) => {
     event.preventDefault();
@@ -64,13 +58,53 @@ login2.addEventListener('click', (event) => {
    name2.value = '';
 })
 
+// declare time
+const  date = new Date();
+let ap,
+    hour = date.getHours(),
+    minute = date.getMinutes();
+
+
+if(hour >=12){
+    ap = 'PM';
+}
+else{
+    ap = 'AM';
+}
+
+function callBack(){
+    minute++
+
+    if(minute === 60){
+        minute = 00;
+        hour++
+    }
+    
+}
+
+window.setInterval(callBack,60000);
+
+
 // sendbutton on the left
 send1.addEventListener('click', (event) => {
     event.preventDefault();
 
-    const sentChat1 = document.createElement('p');
+    const sentChat1 = document.createElement('div');
+    const theText = document.createElement('p');
+    const time = document.createElement('p');
+
     sentChat1.classList.add('lines');
-    sentChat1.textContent = chatsInput1.value;
+    //
+    theText.classList.add('text');
+    theText.textContent = chatsInput1.value;
+    //
+    time.classList.add('time');
+    time.textContent = `${hour}:${minute}${ap}`;
+
+    //
+    sentChat1.appendChild(theText);
+    sentChat1.appendChild(time);
+    
 
 
     if(chatsInput1.value === ''){
@@ -92,9 +126,21 @@ send1.addEventListener('click', (event) => {
 send2.addEventListener('click', (event) => {
     event.preventDefault();
 
-    const sentChat2 = document.createElement('p');
+    const sentChat2 = document.createElement('div');
+    const theText = document.createElement('p');
+    const time = document.createElement('p');
+
     sentChat2.classList.add('lines');
-    sentChat2.textContent = chatsInput2.value;
+    //
+    theText.classList.add('text');
+    theText.textContent = chatsInput2.value;
+    //
+    time.classList.add('time');
+    time.textContent = `${hour}:${minute}${ap}`;
+
+    //
+    sentChat2.appendChild(theText);
+    sentChat2.appendChild(time);
 
     //
     if(chatsInput2.value === ''){
