@@ -55,6 +55,15 @@
   padding: 10px;
 }
 
+.text{
+  display: inline-block;
+}
+
+.time{
+  float: right;
+  color: blue;
+}
+
 [right-container]{
   background-color: white;
   height: 100%;
