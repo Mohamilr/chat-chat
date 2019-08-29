@@ -26,7 +26,7 @@ login1.addEventListener('click', (event) => {
     event.preventDefault();
 
     if(name1.value === ''){
-        alert('please input name to login')
+        return alert('please input name to login')
     }
 
     chatMate2.textContent = name1.value;
@@ -45,7 +45,7 @@ login2.addEventListener('click', (event) => {
     event.preventDefault();
 
     if(name2.value === ''){
-        alert('please input name to login')
+        return alert('please input name to login')
     }
     chatMate1.textContent = name2.value
     status2.textContent = 'active';
@@ -72,6 +72,7 @@ else{
     ap = 'AM';
 }
 
+// increment time in a minute interval
 function callBack(){
     minute++
 
@@ -81,7 +82,7 @@ function callBack(){
     }
     
 }
-
+//
 window.setInterval(callBack,60000);
 
 
